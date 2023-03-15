@@ -13,11 +13,8 @@ I am a final-year Ph.D. student at Arizona State Univeristy, advised by [Prof.De
 My research interests lie in: 
 
   * Efficient and On-device Machine Learning
-  
   * Computer Vision
-  
   * Transfer/Continual Learning
-  
   * Efficient AI Computing Hardware Accelerator Design
 
 

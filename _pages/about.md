@@ -17,6 +17,11 @@ I am a final-year Ph.D. student at Arizona State Univeristy, advised by [Prof.De
   * Transfer/Continual Learning
   * Efficient AI Computing Hardware Accelerator Design
 
+## Awards
+  * Best Interactive Presentation(IP) Award, DATE-2022
+  * Best Paper Candidate, DATE-2022
+  * Best Paper Candidate Nomination, DAC 2022
+  * Young Fellow Award, DAC 2020
 
 ## Academic Services
   * Serve as a reviewer for CVPR, ICML, NeurIPS, ICLR, ECCV, TNNLS, DAC, etc

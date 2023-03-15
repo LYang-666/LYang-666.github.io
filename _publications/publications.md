@@ -6,8 +6,8 @@ author_profile: true
 ---
 
 
-[1] Yang, Li, Jian Meng, Jae-sun Seo, and Deliang Fan. "Get More at Once: Alternating Sparse Training with Gradient Correction." In Advances in Neural Information Processing Systems.
-[2] Lin, Sen, Li Yang, Deliang Fan, and Junshan Zhang. "Beyond Not-Forgetting: Continual Learning with Backward Knowledge Transfer." arXiv preprint arXiv:2211.00789 (2022).
+[1] Yang, Li, Jian Meng, Jae-sun Seo, and Deliang Fan. "Get More at Once: Alternating Sparse Training with Gradient Correction." In Advances in Neural Information Processing Systems. \
+[2] Lin, Sen, Li Yang, Deliang Fan, and Junshan Zhang. "Beyond Not-Forgetting: Continual Learning with Backward Knowledge Transfer." arXiv preprint arXiv:2211.00789 (2022). \
 [3] Krishnan, Gokul, Zhenyu Wang, Li Yang, Injune Yeo, Jian Meng, Rajiv V. Joshi, Nathaniel C. Cady, Deliang Fan, Jae-Sun Seo, and Yu Cao. "IMC Architecture for Robust DNN Acceleration." In 2022 IEEE 16th International Conference on Solid-State & Integrated Circuit Technology (ICSICT), pp. 1-4. IEEE, 2022.
 [4] Krishnan, Gokul, Zhenyu Wang, Injune Yeo, Li Yang, Jian Meng, Maximilian Liehr, Rajiv V. Joshi et al. "Hybrid RRAM/SRAM in-Memory Computing for Robust DNN Acceleration." IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems 41, no. 11 (2022): 4241-4252.
 [5] Zhang, Fan, Li Yang, Jian Meng, Jae-sun Seo, Yu Cao, and Deliang Fan. "XMA: a crossbar-aware multi-task adaption framework via shift-based mask learning method." In Proceedings of the 59th ACM/IEEE Design Automation Conference, pp. 271-276. 2022.

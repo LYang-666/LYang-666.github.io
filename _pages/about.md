@@ -10,7 +10,7 @@ redirect_from:
 
 I am an assistant professor in the Computer Science Department at University of North Carolina at Charlotte. Prior to that, I received my Ph.D. degree from Arizona State Univeristy, advised by Prof. [Deliang Fan](https://www.ece.jhu.edu/dfan/), Master's degree at Univeristy of Central Florida, and Bachelor's degree at Northeastern University, China. 
 
-My Research Interests include: 
+My research interests include: 
 
   **Efficient and On-device Machine Learning** \
   **Computer Vision** \

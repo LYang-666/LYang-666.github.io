@@ -1,7 +1,7 @@
 ---
 permalink: /publications/
 layout: archive
-title: "Selected publications"
+title: "Selected publications([Full list](https://scholar.google.com/citations?hl=en&user=qpUT1I8AAAAJ&view_op=list_works&sortby=pubdate))"
 author_profile: true
 ---
 

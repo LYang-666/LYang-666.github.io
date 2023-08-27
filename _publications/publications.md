@@ -1,10 +1,11 @@
 ---
 permalink: /publications/
 layout: archive
-title: "Selected publications([Full list](https://scholar.google.com/citations?hl=en&user=qpUT1I8AAAAJ&view_op=list_works&sortby=pubdate))"
+title: "Selected publications"
 author_profile: true
 ---
 
+Full list can be found [here](https://scholar.google.com/citations?hl=en&user=qpUT1I8AAAAJ&view_op=list_works&sortby=pubdate)
 
 [1] **Yang, Li**, Jian Meng, Jae-sun Seo, and Deliang Fan. "Get More at Once: Alternating Sparse Training with Gradient Correction." In Advances in Neural Information Processing Systems. \
 [2] Lin, Sen, **Li Yang**, Deliang Fan, and Junshan Zhang. "Beyond Not-Forgetting: Continual Learning with Backward Knowledge Transfer." arXiv preprint arXiv:2211.00789 (2022). \

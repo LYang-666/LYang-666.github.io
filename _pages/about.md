@@ -15,7 +15,7 @@ My Research Interests include:
   **Efficient and On-device Machine Learning** \
   **Computer Vision** \
   **Transfer/Continual Learning** \
-  **Efficient AI Computing Hardware Accelerator Design** \
+  **Efficient AI Computing Hardware Accelerator Design** 
 
 <span style="color: red;">**Openings**: I am looking for self-motivated Ph.D. students (Fully Funded) and research interns. </span> If you are interested in working with me, feel free to send me your CV. Graduate admission information can be found [here](https://cci.charlotte.edu/departments/department-of-computer-science/academics/ph-d-in-computing-and-information-systems-cs-track/admissions-2/)
 

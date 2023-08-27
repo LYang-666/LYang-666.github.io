@@ -21,8 +21,8 @@ My Research Interests include:
 
 ## NEWS
 
-08/2023, Join in CS Deparment at University of North Carolina at Charlotteas an assistant professor. <span style="color: red;">Launching a new academic journal!
-07/2023, [Service] Serve as committee member of ICCAD 2023.
+>08/2023, Join in CS Deparment at University of North Carolina at Charlotte as an assistant professor. <span style="color: red;">Launching a new academic journal! \
+>07/2023, [Service] Serve as committee member of ICCAD 2023.
 
 ## Awards
   * Best Interactive Presentation(IP) Award, DATE-2022

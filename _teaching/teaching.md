@@ -5,7 +5,7 @@ title: "Teaching"
 author_profile: true
 ---
 Instructor
-* ITCS3151 Introduction to AI, UNCC, 2023-2024
+* ITCS3151 Introduction to AI, UNCC, Fall 2023
 
 TA
 * EEL4758 Computer Architecture: Teaching assistant, UCF, 2018-2019 

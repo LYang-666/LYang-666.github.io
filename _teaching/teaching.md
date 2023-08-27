@@ -4,7 +4,10 @@ layout: archive
 title: "Teaching"
 author_profile: true
 ---
+Instructor
+* ITCS3151 Introduction to AI, UNCC, 2023-2024
 
+TA
 * EEL4758 Computer Architecture: Teaching assistant, UCF, 2018-2019 
 * EEE3342 Digital System: Teaching assistant, UCF, 2018-2019 
 * EEE598 Multicore Architecture: Lab instructor, ASU, 2019-2020 

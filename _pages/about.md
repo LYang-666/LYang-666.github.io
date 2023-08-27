@@ -26,4 +26,5 @@ I am an assistant professor in the Computer Science Department at University of 
   * Young Fellow Award, DAC 2020
 
 ## Academic Services
+  * Serve as TPC for ICCAD, 2023
   * Serve as a reviewer for CVPR, ICML, NeurIPS, ICLR, ECCV, TNNLS, DAC, etc

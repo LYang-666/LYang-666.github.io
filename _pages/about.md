@@ -8,7 +8,8 @@ redirect_from:
   - /about.html
 ---
 
-I am a final-year Ph.D. student at Arizona State Univeristy, advised by [Prof.Deliang Fan](https://dfan.engineering.asu.edu/). Before that, I received my Master's degree at Univeristy of Central Florida and my Bachelor's degree at Northeastern University, China. 
+I am an assistant professor in the Computer Science Department at University of North Carolina at Charlotte. Prior to that, I received my Ph.D. degree from Arizona State Univeristy, advised by [Prof.Deliang Fan](https://dfan.engineering.asu.edu/), Master's degree at Univeristy of Central Florida, and Bachelor's degree at Northeastern University, China. 
+
 
 ## Research Interests 
 

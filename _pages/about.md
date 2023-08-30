@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I an assistant professor in the Computer Science Department at University of North Carolina at Charlotte. Prior to that, I received my Ph.D. degree from Arizona State University, advised by Prof. [Deliang Fan](https://www.ece.jhu.edu/dfan/), Master’s degree at University of Central Florida, and Bachelor’s degree at Northeastern University, China.
+I am assistant professor in the Computer Science Department at University of North Carolina at Charlotte. Prior to that, I received my Ph.D. degree from Arizona State University, advised by Prof. [Deliang Fan](https://www.ece.jhu.edu/dfan/), Master’s degree at University of Central Florida, and Bachelor’s degree at Northeastern University, China.
 
 My research interests include: 
 

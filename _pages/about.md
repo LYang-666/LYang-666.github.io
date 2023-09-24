@@ -20,6 +20,7 @@ My research interests include:
 <span style="color: red;">**Openings**: I am looking for self-motivated Ph.D. students (Fully Funded) and research interns. </span> If you are interested in working with me, feel free to send me your CV. Graduate admission information can be found [here](https://cci.charlotte.edu/departments/department-of-computer-science/academics/ph-d-in-computing-and-information-systems-cs-track/admissions-2/)
 
 ## NEWS
+>09/2023, [Publication] Our paper "Slimmed Asymmetrical Contrastive Learning and Cross Distillation for Lightweight Model Training" was accepted by NeurIPS 2023.
 
 >08/2023, Join in CS Deparment at University of North Carolina at Charlotte as an assistant professor. <span style="color: red;">Launching a new academic journal!
 

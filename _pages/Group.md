@@ -1,5 +1,7 @@
 ---
-permalink: /terms/
+layout: page
+title: Group
+permalink: /group/
 ---
 
 ### PhD Students

@@ -1,7 +1,7 @@
 ---
 permalink: /group/
 layout: archive
-title: "Group"
+title: "Lab members"
 author_profile: true
 ---
 

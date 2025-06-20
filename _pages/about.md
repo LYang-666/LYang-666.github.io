@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am assistant professor in the Computer Science Department at University of North Carolina at Charlotte. Prior to that, I received my Ph.D. degree from Arizona State University, advised by Prof. [Deliang Fan](https://www.ece.jhu.edu/dfan/), Master’s degree at University of Central Florida, and Bachelor’s degree at Northeastern University, China.
+I am an assistant professor in the Department of Computer Science at the University of North Carolina at Charlotte. Prior to that, I received my Ph.D. degree from Arizona State University, advised by Prof. [Deliang Fan](https://www.ece.jhu.edu/dfan/), Master’s degree at University of Central Florida, and Bachelor’s degree at Northeastern University, China.
 
 My research interests include: 
 
@@ -21,18 +21,24 @@ My research interests include:
 
 ## NEWS
 
-> 06/2025, [Publication] One paper accepted to ECML-PKDD 2025.<br>
-> 06/2025, Serve as a committee member for ICCAD 2025.<br>
-> 05/2025, [Publication] One paper accepted to ISQED 2025 (Invited).<br>
-> 05/2025, [Publication] One paper accepted to GLSVLSI 2025.<br>
-> 04/2025, Serve on an NSF panel.<br>
-> 02/2025, [Publication] One paper accepted to CVPR 2025.<br>
-> 01/2025, [Publication] One paper accepted by ICLR 2025.<br>
-> 06/2024, Serve as a committee member for ICCAD 2024.<br>
-> 01/2024, Receive NSF CRII award.<br>
-> 09/2023, [Publication] One paper accepted to NeurIPS 2023.<br>
-> 08/2023, Join the CS Department at the University of North Carolina at Charlotte as an assistant professor. <span style="color: red;">Launching a new academic journal!</span><br>
-> 07/2023, Serve as a committee member for ICCAD 2023.<br> 
+- 06/2025, [Publication] One paper accepted to ECML-PKDD 2025.
+- 06/2025, Serve as a committee member for ICCAD 2025.
+- 05/2025, [Publication] One paper accepted to ISQED 2025 (Invited).
+- 05/2025, [Publication] One paper accepted to GLSVLSI 2025.
+- 04/2025, Serve on an NSF panel.
+- 02/2025, [Publication] One paper accepted to CVPR 2025.
+- 01/2025, [Publication] One paper accepted to ICLR 2025.
+- 10/2024, [Publication] One paper accepted to WACV 2025.
+- 10/2024, [Publication] One paper accepted to BigData 2024.
+- 09/2024, [Publication] One paper accepted to ASP-DAC 2025.
+- 09/2023, [Publication] One paper accepted to NeurIPS 2025.
+- 02/2024, [Publication] One paper accepted to DAC 2024.
+- 06/2024, Serve as a committee member for ICCAD 2024.
+- 01/2024, Receive NSF CRII award.
+- 09/2023, [Publication] One paper accepted to NeurIPS 2024.
+- 08/2023, Join the CS Department at the University of North Carolina at Charlotte as an assistant professor. <span style="color: red;">Launching a new academic journal!</span>
+- 07/2023, Serve as a committee member for ICCAD 2023.
+
 
 ## Awards
   * Best Interactive Presentation(IP) Award, DATE-2022

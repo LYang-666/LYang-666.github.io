@@ -17,7 +17,7 @@ My research interests include:
   **Transfer/Continual Learning** \
   **Efficient AI Computing Hardware Accelerator Design** 
 
-<span style="color: red;">**Openings for Fall 2025/Spring 2026**: I am looking for self-motivated Ph.D. students (Fully Funded) and research interns. </span> If you are interested in working with me, feel free to send me your CV. Graduate admission information can be found [here](https://cci.charlotte.edu/departments/department-of-computer-science/academics/ph-d-in-computing-and-information-systems-cs-track/admissions-2/)
+<span style="color: red;">**Openings for Fall 2025/Spring 2026**</span>: I am looking for self-motivated Ph.D. students (Fully Funded) and research interns. If you are interested in working with me, feel free to send me your CV. Graduate admission information can be found [here](https://cci.charlotte.edu/departments/department-of-computer-science/academics/ph-d-in-computing-and-information-systems-cs-track/admissions-2/)
 
 ## NEWS
 

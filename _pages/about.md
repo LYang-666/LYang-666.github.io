@@ -21,21 +21,21 @@ My research interests include:
 
 ## NEWS
 
-- 06/2025, [Publication] One paper accepted to ECML-PKDD 2025.
+- 06/2025, One paper accepted to ECML-PKDD 2025.
 - 06/2025, Serve as a committee member for ICCAD 2025.
-- 05/2025, [Publication] One paper accepted to ISQED 2025 (Invited).
-- 05/2025, [Publication] One paper accepted to GLSVLSI 2025.
+- 05/2025, One paper accepted to ISQED 2025 (Invited).
+- 05/2025, One paper accepted to GLSVLSI 2025.
 - 04/2025, Serve on an NSF panel.
-- 02/2025, [Publication] One paper accepted to CVPR 2025.
-- 01/2025, [Publication] One paper accepted to ICLR 2025.
-- 10/2024, [Publication] One paper accepted to WACV 2025.
-- 10/2024, [Publication] One paper accepted to BigData 2024.
-- 09/2024, [Publication] One paper accepted to ASP-DAC 2025.
-- 09/2023, [Publication] One paper accepted to NeurIPS 2025.
-- 02/2024, [Publication] One paper accepted to DAC 2024.
+- 02/2025, One paper accepted to CVPR 2025.
+- 01/2025, One paper accepted to ICLR 2025.
+- 10/2024, One paper accepted to WACV 2025.
+- 10/2024, One paper accepted to BigData 2024.
+- 09/2024, One paper accepted to ASP-DAC 2025.
+- 09/2023, One paper accepted to NeurIPS 2024.
+- 02/2024, One paper accepted to DAC 2024.
 - 06/2024, Serve as a committee member for ICCAD 2024.
 - 01/2024, Receive NSF CRII award.
-- 09/2023, [Publication] One paper accepted to NeurIPS 2024.
+- 09/2023, One paper accepted to NeurIPS 2024.
 - 08/2023, Join the CS Department at the University of North Carolina at Charlotte as an assistant professor. <span style="color: red;">Launching a new academic journal!</span>
 - 07/2023, Serve as a committee member for ICCAD 2023.
 

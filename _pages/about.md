@@ -13,9 +13,11 @@ I am an assistant professor in the Department of Computer Science at the Univers
 My research interests include: 
 
   **Efficient and On-device Machine Learning** \
-  **Computer Vision** \
-  **Transfer/Continual Learning** \
+  **Continual Learning** \
   **Efficient AI Computing Hardware Accelerator Design** 
+
+With various applications in computer vision, natural language processing (e.g., large-scale generative models), IoT/Mobile computing, and secure AI systems.
+
 
 <span style="color: red;">**Openings for Fall 2025/Spring 2026**</span>: I am looking for self-motivated Ph.D. students (Fully Funded) and research interns. If you are interested in working with me, feel free to send me your CV. Graduate admission information can be found [here](https://cci.charlotte.edu/departments/department-of-computer-science/academics/ph-d-in-computing-and-information-systems-cs-track/admissions-2/)
 

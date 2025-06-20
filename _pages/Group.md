@@ -1,7 +1,8 @@
 ---
-layout: page
-title: Group
 permalink: /group/
+layout: archive
+title: "Group"
+author_profile: true
 ---
 
 ### PhD Students

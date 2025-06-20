@@ -1,3 +1,7 @@
+---
+permalink: /terms/
+---
+
 ### PhD Students
 - Ziyan Wang, 01/2024 –
 - Wanhao Yu, 08/2024 -

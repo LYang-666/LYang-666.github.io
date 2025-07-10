@@ -10,7 +10,7 @@ author_profile: true
 - Wanhao Yu, 08/2024 -
 
 ### Master Students
-- Zhongxing Qian, 05/2024 -
+- Zhongxing Qin, 05/2024 -
 - Alexander Mesa，05/2025 -
 
 ### Undergraduate Students

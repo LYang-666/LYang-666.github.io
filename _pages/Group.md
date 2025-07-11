@@ -17,5 +17,4 @@ author_profile: true
 - Bruh Lemma Yadecha, 04/2025 -
   
 ### Research Interns
-- Rui Xia, 05/2025 –
 - Liwen Zhang, 05/2025 –

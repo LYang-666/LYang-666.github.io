@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Efficient AI Computing Lab — Li Yang @ UNC Charlotte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #222222;
+    --text-secondary: #666666;
+    --text-light: #999999;
+    --border: #e8e8e8;
+    --hover-bg: #f8f8f8;
+    --tag-bg: #f2f2f2;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--text); }
+  a:hover { color: var(--text-secondary); }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 52px;
+  }
+  .nav-brand {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.82rem;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+  .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.84rem;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+
+  /* ── HERO ── */
+  .hero {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3.5rem 2rem 2.5rem;
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+  .hero-photo img {
+    width: 170px;
+    height: 210px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 4px;
+  }
+  .hero-info h1 {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+  }
+  .hero-info .subtitle {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+  }
+  .hero-info .subtitle a {
+    color: var(--text-secondary);
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 2px;
+  }
+  .hero-info .subtitle a:hover { text-decoration-color: var(--text-secondary); }
+  .hero-bio {
+    font-size: 0.92rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    margin-bottom: 1.2rem;
+  }
+  .hero-bio a {
+    color: var(--text-secondary);
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 2px;
+  }
+  .hero-bio a:hover { text-decoration-color: var(--text-secondary); }
+  .hero-links { display: flex; gap: 1.2rem; }
+  .hero-links a {
+    font-size: 0.82rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--text-secondary);
+    transition: color 0.2s;
+  }
+  .hero-links a:hover { color: var(--text); }
+  .hero-links a::before {
+    content: '↗';
+    margin-right: 0.25rem;
+    font-size: 0.75rem;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  .divider hr { border: none; border-top: 1px solid var(--border); }
+
+  /* ── RESEARCH VISION ── */
+  .vision {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 1.5rem;
+  }
+  .vision-text {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text);
+    font-weight: 400;
+    max-width: 720px;
+  }
+
+  /* ── RESEARCH AREAS (click accordion) ── */
+  .areas-wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 2rem 2.5rem;
+  }
+  .areas {
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .areas-tabs {
+    display: flex;
+    background: var(--border);
+    gap: 1px;
+  }
+  .area-tab {
+    flex: 1;
+    background: var(--bg);
+    padding: 1.2rem 1.3rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    border: none;
+    text-align: left;
+    font-family: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .area-tab:hover { background: var(--hover-bg); }
+  .area-tab.active { background: var(--hover-bg); }
+  .area-tab .area-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-light);
+    letter-spacing: 0.03em;
+  }
+  .area-tab h3 {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.02rem;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--text);
+    transition: color 0.2s;
+  }
+  .area-tab .area-hint {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--text-light);
+    transition: opacity 0.2s;
+  }
+  .area-tab.active .area-hint { opacity: 0; }
+  .area-detail {
+    display: none;
+    padding: 1.8rem 2rem;
+    border-top: 1px solid var(--border);
+    background: var(--hover-bg);
+  }
+  .area-detail.active { display: block; }
+  .area-detail-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 2.5rem;
+  }
+  .area-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+  }
+  .area-topics h4 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-light);
+    margin-bottom: 0.6rem;
+  }
+  .area-topics ul {
+    list-style: none;
+  }
+  .area-topics li {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    padding: 0.25rem 0;
+    padding-left: 1rem;
+    position: relative;
+    line-height: 1.55;
+  }
+  .area-topics li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--text-light);
+    font-weight: 700;
+  }
+
+  @media (max-width: 700px) {
+    .areas-tabs { flex-direction: column; }
+    .area-detail-inner { grid-template-columns: 1fr; gap: 1rem; }
+    .area-detail { padding: 1.3rem 1.5rem; }
+  }
+
+  /* ── OPENINGS ── */
+  .openings {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 2rem 2.5rem;
+  }
+  .openings-card {
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 1.5rem 1.8rem;
+    background: var(--hover-bg);
+  }
+  .openings-card h3 {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  .openings-card p {
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+  }
+  .openings-card a {
+    color: var(--text);
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 2px;
+  }
+  .openings-card a:hover { text-decoration-color: var(--text); }
+
+  /* ── SECTION ── */
+  .section {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 2rem 2.5rem;
+  }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-header h2 {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+  }
+  .section-header a {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+  }
+  .section-header a:hover { color: var(--text); }
+
+  /* ── NEWS ── */
+  .news-scroll {
+    max-height: 340px;
+    overflow-y: auto;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+  .news-scroll::-webkit-scrollbar { width: 5px; }
+  .news-scroll::-webkit-scrollbar-track { background: transparent; }
+  .news-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  .news-scroll::-webkit-scrollbar-thumb:hover { background: var(--text-light); }
+  .news-table { width: 100%; border-collapse: collapse; }
+  .news-table tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+  .news-table tr:last-child { border-bottom: none; }
+  .news-table tr:hover { background: var(--hover-bg); }
+  .news-table td { padding: 0.65rem 1rem; vertical-align: middle; font-size: 0.88rem; }
+  .news-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--text-light);
+    white-space: nowrap;
+    width: 100px;
+  }
+  .news-table td:last-child { color: var(--text-secondary); }
+  .news-table strong { color: var(--text); font-weight: 500; }
+  .news-badge {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    padding: 0.15rem 0.45rem;
+    border-radius: 2px;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    background: var(--tag-bg);
+  }
+  .news-badge.paper { border-color: #c8c8c8; color: var(--text); }
+  .news-badge.service { border-color: #d8d8d8; color: var(--text-light); }
+  .news-badge.award { border-color: #bbb; color: var(--text); background: #f8f6f0; }
+  .news-badge.milestone { border-color: #d8d8d8; color: var(--text-secondary); }
+  .news-fade {
+    position: relative;
+  }
+  .news-fade::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 40px;
+    background: linear-gradient(transparent, var(--bg));
+    pointer-events: none;
+    border-radius: 0 0 3px 3px;
+  }
+
+  /* ── PUBLICATIONS ── */
+  .pub-list { display: flex; flex-direction: column; }
+  .pub-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 1.2rem;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .pub-item:last-child { border-bottom: none; }
+  .pub-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: var(--tag-bg);
+    padding: 0.35rem 0.55rem;
+    border-radius: 2px;
+    text-align: center;
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+  .pub-content h4 {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 0.2rem;
+  }
+  .pub-authors {
+    font-size: 0.82rem;
+    color: var(--text-light);
+    margin-bottom: 0.15rem;
+    line-height: 1.5;
+  }
+  .pub-authors strong { color: var(--text); font-weight: 500; }
+  .pub-venue {
+    font-size: 0.82rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+  }
+  .pub-links { display: flex; gap: 0.6rem; }
+  .pub-links a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--text-secondary);
+    padding: 0.2rem 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    transition: all 0.15s;
+  }
+  .pub-links a:hover { border-color: var(--text); color: var(--text); }
+
+  /* ── AWARDS ── */
+  .awards-list { display: flex; flex-direction: column; }
+  .award-row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 1.2rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.88rem;
+    align-items: baseline;
+  }
+  .award-row:last-child { border-bottom: none; }
+  .award-year {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--text-light);
+  }
+  .award-row span:last-child { color: var(--text-secondary); }
+  .award-row strong { color: var(--text); font-weight: 500; }
+
+  /* ── GROUP ── */
+  .group-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .group-cat h3 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-light);
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .group-cat ul { list-style: none; }
+  .group-cat li {
+    padding: 0.35rem 0;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+  }
+  .member-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--text-light);
+    margin-left: 0.3rem;
+  }
+
+  /* ── SERVICES ── */
+  .services-text {
+    font-size: 0.88rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+  }
+  .services-text strong { color: var(--text); font-weight: 500; }
+
+  /* ── FOOTER ── */
+  footer {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    color: var(--text-light);
+    margin-top: 1rem;
+  }
+  footer a {
+    color: var(--text-light);
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 2px;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 700px) {
+    .hero { grid-template-columns: 1fr; padding: 2rem 1.5rem; gap: 1.5rem; }
+    .hero-photo { display: flex; }
+    .hero-photo img { width: 140px; height: 170px; }
+    .pub-item { grid-template-columns: 1fr; }
+    .pub-tag { display: inline-block; width: fit-content; }
+    .group-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .award-row { grid-template-columns: 1fr; gap: 0.2rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links a { font-size: 0.78rem; }
+    .section, .vision, .openings, .divider, .areas-wrapper { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .hero-info h1 { font-size: 1.7rem; }
+    .vision-text { font-size: 1.05rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">Efficient AI Computing Lab</a>
+    <ul class="nav-links">
+      <li><a href="#about" class="active">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#group">Group</a></li>
+      <li><a href="https://lyang-666.github.io/teaching/">Teaching</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero" id="about">
+  <div class="hero-photo">
+    <img src="https://lyang-666.github.io/images/CCI_YANG-Li_23003_5862_ah.jpg" alt="Li Yang" />
+  </div>
+  <div class="hero-info">
+    <h1>Li Yang</h1>
+    <p class="subtitle">Assistant Professor, <a href="https://cci.charlotte.edu/departments/department-of-computer-science/">Department of Computer Science</a>, <a href="https://www.charlotte.edu/">UNC Charlotte</a></p>
+    <p class="hero-bio">
+      I lead the Efficient AI Computing Lab. Before joining UNCC, I received my Ph.D. from Arizona State University (advised by Prof. <a href="https://www.ece.jhu.edu/dfan/">Deliang Fan</a>).
+    </p>
+    <div class="hero-links">
+      <a href="/cdn-cgi/l/email-protection#8ee2f7efe0e9bbbecefbe0ededa0ebeafb">Email</a>
+      <a href="https://scholar.google.com/citations?user=qpUT1I8AAAAJ&hl=en">Google Scholar</a>
+      <a href="https://github.com/LYang-666">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<section class="vision">
+  <p class="vision-text">Our research aims to build efficient and adaptive AI systems that can learn, evolve, and operate under real-world resource constraints.</p>
+</section>
+
+<div class="areas-wrapper">
+  <div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: #999; margin-bottom: 0.7rem;">Research Directions</div>
+  <div class="areas">
+    <div class="areas-tabs">
+      <button class="area-tab active" onclick="showArea(0)">
+        <span class="area-num">01</span>
+        <h3>Efficient Foundation Models</h3>
+        <span class="area-hint">compression · fine-tuning · reasoning</span>
+      </button>
+      <button class="area-tab" onclick="showArea(1)">
+        <span class="area-num">02</span>
+        <h3>Adaptive &amp; Continual Learning</h3>
+        <span class="area-hint">lifelong · streaming · adaptation</span>
+      </button>
+      <button class="area-tab" onclick="showArea(2)">
+        <span class="area-num">03</span>
+        <h3>Edge AI &amp; On-Device Intelligence</h3>
+        <span class="area-hint">co-design · on-device · privacy</span>
+      </button>
+    </div>
+    <div class="area-detail active" data-area="0">
+      <div class="area-detail-inner">
+        <div class="area-desc">Modern foundation models such as large language models (LLMs) and multimodal generative models provide powerful capabilities but require substantial computational resources. Our research focuses on developing efficient techniques that reduce the training and inference cost of large-scale models while maintaining strong performance.</div>
+        <div class="area-topics">
+          <h4>Key topics</h4>
+          <ul>
+            <li>Model compression (pruning, quantization, low-rank adaptation)</li>
+            <li>Efficient fine-tuning and adaptation</li>
+            <li>Efficient reasoning</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="area-detail" data-area="1">
+      <div class="area-detail-inner">
+        <div class="area-desc">Real-world AI systems must operate in dynamic environments where tasks and data distributions evolve over time. Our research develops adaptive learning algorithms that enable models to continuously learn from new data while retaining previously acquired knowledge.</div>
+        <div class="area-topics">
+          <h4>Key topics</h4>
+          <ul>
+            <li>Efficient continual learning algorithms for large-scale models</li>
+            <li>Lifelong learning agents</li>
+            <li>Online and streaming learning systems</li>
+            <li>Adaptive model architectures</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="area-detail" data-area="2">
+      <div class="area-detail-inner">
+        <div class="area-desc">Many emerging applications require AI models to run directly on resource-constrained platforms such as mobile devices, sensors, and embedded systems. Our work explores efficient AI systems that enable real-time inference and learning at the edge.</div>
+        <div class="area-topics">
+          <h4>Key topics</h4>
+          <ul>
+            <li>Software–hardware co-design for efficient AI systems</li>
+            <li>On-device learning and model adaptation</li>
+            <li>Real-time AI for streaming and sensor data</li>
+            <li>Robust and privacy-preserving edge AI</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function showArea(idx) {
+  document.querySelectorAll('.area-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.area-detail').forEach(d => d.classList.remove('active'));
+  document.querySelectorAll('.area-tab')[idx].classList.add('active');
+  document.querySelector(`.area-detail[data-area="${idx}"]`).classList.add('active');
+}
+</script>
+
+<section class="openings">
+  <div class="openings-card">
+    <h3>Open Positions — Fall 2025 / Spring 2026</h3>
+    <p>I am looking for self-motivated Ph.D. students (fully funded) and research interns. If you are interested in efficient ML, continual learning, or edge AI, please send your CV to <a href="/cdn-cgi/l/email-protection#472b3e2629207277073229242469222332"><span class="__cf_email__" data-cfemail="f09c89919e97c5c0b0859e9393de959485">[email&#160;protected]</span></a>. Admission details <a href="https://cci.charlotte.edu/departments/department-of-computer-science/academics/ph-d-in-computing-and-information-systems-cs-track/admissions-2/">here</a>.</p>
+  </div>
+</section>
+
+<section class="section" id="news">
+  <div class="section-header">
+    <h2>News</h2>
+  </div>
+  <div class="news-fade">
+  <div class="news-scroll">
+  <table class="news-table">
+    <tr><td class="news-date">Jun 2025</td><td><span class="news-badge paper">paper</span> One paper accepted to <strong>ECML-PKDD 2025</strong>.</td></tr>
+    <tr><td class="news-date">Jun 2025</td><td><span class="news-badge service">service</span> Serve as a committee member for <strong>ICCAD 2025</strong>.</td></tr>
+    <tr><td class="news-date">May 2025</td><td><span class="news-badge paper">paper</span> One paper accepted to <strong>ISQED 2025</strong> (Invited).</td></tr>
+    <tr><td class="news-date">May 2025</td><td><span class="news-badge paper">paper</span> One paper accepted to <strong>GLSVLSI 2025</strong>.</td></tr>
+    <tr><td class="news-date">Apr 2025</td><td><span class="news-badge service">service</span> Serve on an NSF panel.</td></tr>
+    <tr><td class="news-date">Feb 2025</td><td><span class="news-badge paper">paper</span> One paper accepted to <strong>CVPR 2025</strong>.</td></tr>
+    <tr><td class="news-date">Jan 2025</td><td><span class="news-badge paper">paper</span> One paper accepted to <strong>ICLR 2025</strong>.</td></tr>
+    <tr><td class="news-date">Oct 2024</td><td><span class="news-badge paper">paper</span> One paper accepted to <strong>WACV 2025</strong>.</td></tr>
+    <tr><td class="news-date">Oct 2024</td><td><span class="news-badge paper">paper</span> One paper accepted to <strong>BigData 2024</strong>.</td></tr>
+    <tr><td class="news-date">Sep 2024</td><td><span class="news-badge paper">paper</span> One paper accepted to <strong>ASP-DAC 2025</strong> and <strong>NeurIPS 2024</strong>.</td></tr>
+    <tr><td class="news-date">Jun 2024</td><td><span class="news-badge service">service</span> Serve as a committee member for <strong>ICCAD 2024</strong>.</td></tr>
+    <tr><td class="news-date">Feb 2024</td><td><span class="news-badge paper">paper</span> One paper accepted to <strong>DAC 2024</strong>.</td></tr>
+    <tr><td class="news-date">Jan 2024</td><td><span class="news-badge award">award</span> Receive <strong>NSF CRII award</strong>.</td></tr>
+    <tr><td class="news-date">Aug 2023</td><td><span class="news-badge milestone">milestone</span> Joined UNC Charlotte as an Assistant Professor.</td></tr>
+    <tr><td class="news-date">Jul 2023</td><td><span class="news-badge service">service</span> Serve as a committee member for <strong>ICCAD 2023</strong>.</td></tr>
+  </table>
+  </div>
+  </div>
+</section>
+
+<section class="section" id="publications">
+  <div class="section-header">
+    <h2>Recent Publications</h2>
+    <a href="https://scholar.google.com/citations?hl=en&user=qpUT1I8AAAAJ&view_op=list_works&sortby=pubdate">Full list →</a>
+  </div>
+  <div class="pub-list">
+    <div class="pub-item">
+      <div><span class="pub-tag">DAC '26</span></div>
+      <div class="pub-content">
+        <h4>Think Before You Prune: Self-Reflective Structured Pruning for Reasoning Language Models</h4>
+        <p class="pub-authors">Ziyan Wang, Enmao Diao, Qi Le, Ping Wang, Guanghui Wang, Mingyi Lee, Shih-Yang Yeh, and <strong>Li Yang</strong></p>
+        <p class="pub-venue">DAC 2026</p>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div><span class="pub-tag">ICLR '26</span></div>
+      <div class="pub-content">
+        <h4>Rethinking Continual Learning with Progressive Neural Collapse</h4>
+        <p class="pub-authors">Zheng Wang, Wanhao Yu, <strong>Li Yang</strong>, and Sen Lin</p>
+        <p class="pub-venue">ICLR 2026</p>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div><span class="pub-tag">WACV '26</span></div>
+      <div class="pub-content">
+        <h4>More Than Memory Savings: Zeroth-Order Optimization Mitigates Forgetting in Continual Learning</h4>
+        <p class="pub-authors">Wanhao Yu, Ziyan Wang, Shuning Niu, Sen Lin, and <strong>Li Yang</strong></p>
+        <p class="pub-venue">WACV 2026</p>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div><span class="pub-tag">CVPR '25</span></div>
+      <div class="pub-content">
+        <h4>Closest Neighbors are Harmful for Lightweight Masked Auto-encoders</h4>
+        <p class="pub-authors">Jian Meng, Ahmed Hassan, <strong>Li Yang</strong>, Deliang Fan, Jinwoo Shin, and Jae-sun Seo</p>
+        <p class="pub-venue">CVPR 2025</p>
+        <div class="pub-links">
+          <a href="https://openaccess.thecvf.com/CVPR2025">PDF</a>
+        </div>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div><span class="pub-tag">ICLR '25</span></div>
+      <div class="pub-content">
+        <h4>Probe Pruning: Accelerating LLMs through Dynamic Pruning via Model-Probing</h4>
+        <p class="pub-authors">Qi Le, Enmao Diao, Ziyan Wang, Xinran Wang, Jie Ding, <strong>Li Yang</strong>, and Ali Anwar</p>
+        <p class="pub-venue">ICLR 2025</p>
+        <div class="pub-links">
+          <a href="https://openreview.net/forum?id=WOt1owGfuN">PDF</a>
+        </div>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div><span class="pub-tag">ISQED '25</span></div>
+      <div class="pub-content">
+        <h4>Efficient Self-Supervised Continual Learning with Progressive Task-Correlated Layer Freezing</h4>
+        <p class="pub-authors"><strong>Li Yang</strong>, Sen Lin, Fan Zhang, Junshan Zhang, and Deliang Fan</p>
+        <p class="pub-venue">ISQED 2025 (Invited)</p>
+        <div class="pub-links">
+          <a href="https://openreview.net/forum?id=20hQOjsEthi">PDF</a>
+        </div>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div><span class="pub-tag">GLSVLSI '25</span></div>
+      <div class="pub-content">
+        <h4>LoRAFusion: A Crossbar-aware Multi-task Adaption Framework via Efficient Fusion of Pretrained LoRA Modules</h4>
+        <p class="pub-authors">Jingkai Guo, Ammar Ali, <strong>Li Yang</strong>, and Deliang Fan</p>
+        <p class="pub-venue">GLSVLSI 2025</p>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div><span class="pub-tag">COINS '25</span></div>
+      <div class="pub-content">
+        <h4>Dyna-Optics: Architecting a Channel-Adaptive DNN Near-Sensor Optical Accelerator for Dynamic Inference</h4>
+        <p class="pub-authors">Deniz Najafi, Wanhao Yu, Mehrdad Morsali, Paolo Mercati, Mohsen Imani, Mahdi Nikdast, <strong>Li Yang</strong>, and Shaahin Angizi</p>
+        <p class="pub-venue">COINS 2025</p>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div><span class="pub-tag">WACV '25</span></div>
+      <div class="pub-content">
+        <h4>MFNeRF: Memory Efficient NeRF with Mixed-Feature Hash Table</h4>
+        <p class="pub-authors">Yongjae Lee, <strong>Li Yang</strong>, and Deliang Fan</p>
+        <p class="pub-venue">WACV 2025</p>
+        <div class="pub-links">
+          <a href="https://openreview.net/forum?id=uvO3VYCLr9c">PDF</a>
+        </div>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div><span class="pub-tag">NeurIPS '24</span></div>
+      <div class="pub-content">
+        <h4>LP-3DGS: Learning to Prune 3D Gaussian Splatting</h4>
+        <p class="pub-authors">Zhaoliang Zhang, Tianchen Song, Yongjae Lee, <strong>Li Yang</strong>, Cheng Peng, Rama Chellappa, and Deliang Fan</p>
+        <p class="pub-venue">NeurIPS 2024</p>
+        <div class="pub-links">
+          <a href="https://openreview.net/forum?id=kzJ9P7VPnS">PDF</a>
+        </div>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div><span class="pub-tag">DAC '24</span></div>
+      <div class="pub-content">
+        <h4>Hyb-Learn: A Framework for On-Device Self-Supervised Continual Learning with Hybrid RRAM/SRAM Memory</h4>
+        <p class="pub-authors">Fan Zhang, <strong>Li Yang</strong>, and Deliang Fan</p>
+        <p class="pub-venue">DAC 2024</p>
+        <div class="pub-links">
+          <a href="https://dl.acm.org/doi/10.1145/3649329">PDF</a>
+        </div>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div><span class="pub-tag">AAAI '24</span></div>
+      <div class="pub-content">
+        <h4>EMGAN: Early-Mix-GAN on Extracting Server-Side Model in Split Federated Learning</h4>
+        <p class="pub-authors">Jingtao Li, Xing Chen, <strong>Li Yang</strong>, Adnan Siraj Rakin, Deliang Fan, and Chaitali Chakrabarti</p>
+        <p class="pub-venue">AAAI 2024</p>
+        <div class="pub-links">
+          <a href="https://ojs.aaai.org/index.php/AAAI/article/view/29284">PDF</a>
+        </div>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div><span class="pub-tag">NeurIPS '23</span></div>
+      <div class="pub-content">
+        <h4>Slimmed Asymmetrical Contrastive Learning and Cross Distillation for Lightweight Model Training</h4>
+        <p class="pub-authors">Jian Meng, <strong>Li Yang</strong>, Kyungmin Lee, Jinwoo Shin, Deliang Fan, and Jae-sun Seo</p>
+        <p class="pub-venue">NeurIPS 2023</p>
+        <div class="pub-links">
+          <a href="https://openreview.net/forum?id=mOVEJletyD">PDF</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="awards">
+  <div class="section-header">
+    <h2>Awards</h2>
+  </div>
+  <div class="awards-list">
+    <div class="award-row"><span class="award-year">2022</span><span><strong>Best Interactive Presentation Award</strong>, DATE 2022</span></div>
+    <div class="award-row"><span class="award-year">2022</span><span><strong>Best Paper Candidate</strong>, DATE 2022</span></div>
+    <div class="award-row"><span class="award-year">2022</span><span><strong>Best Paper Candidate Nomination</strong>, DAC 2022</span></div>
+    <div class="award-row"><span class="award-year">2020</span><span><strong>Young Fellow Award</strong>, DAC 2020</span></div>
+  </div>
+</section>
+
+<section class="section" id="group">
+  <div class="section-header">
+    <h2>Lab Members</h2>
+  </div>
+  <div class="group-grid">
+    <div class="group-cat">
+      <h3>PhD Students</h3>
+      <ul>
+        <li>Ziyan Wang <span class="member-date">Jan 2024 –</span></li>
+        <li>Wanhao Yu <span class="member-date">Aug 2024 –</span></li>
+      </ul>
+    </div>
+    <div class="group-cat">
+      <h3>Master Students</h3>
+      <ul>
+        <li>Zhongxing Qin <span class="member-date">May 2024 –</span></li>
+        <li>Alexander Mesa <span class="member-date">May 2025 –</span></li>
+      </ul>
+    </div>
+    <div class="group-cat">
+      <h3>Undergraduates</h3>
+      <ul>
+        <li>Bruh Lemma Yadecha <span class="member-date">Apr 2025 –</span></li>
+      </ul>
+    </div>
+    <div class="group-cat">
+      <h3>Research Interns</h3>
+      <ul>
+        <li>Liwen Zhang <span class="member-date">May 2025 –</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="section-header">
+    <h2>Academic Services</h2>
+  </div>
+  <p class="services-text">
+    <strong>TPC member:</strong> ICCAD 2023, 2024, 2025<br>
+    <strong>Reviewer:</strong> CVPR, ICML, NeurIPS, ICLR, ECCV, TNNLS, DAC, and others
+  </p>
+</section>
+
+<footer>
+  <span

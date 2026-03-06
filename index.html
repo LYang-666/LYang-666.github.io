@@ -10,15 +10,12 @@
 <style>
   :root {
     --bg: #ffffff;
-    --text: #1a1a1a;
-    --text-secondary: #4a4a4a;
-    --text-light: #808080;
-    --border: #e0e0e0;
-    --hover-bg: #f5f5f5;
-    --tag-bg: #efefef;
-    --accent-1: #1d4ed8;
-    --accent-2: #0f766e;
-    --accent-3: #7c3aed;
+    --text: #222222;
+    --text-secondary: #666666;
+    --text-light: #999999;
+    --border: #e8e8e8;
+    --hover-bg: #f8f8f8;
+    --tag-bg: #f2f2f2;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -180,11 +177,9 @@
     flex: 1;
     background: var(--bg);
     padding: 1.2rem 1.3rem;
-    padding-top: 1rem;
     cursor: pointer;
     transition: background 0.2s;
     border: none;
-    border-top: 3px solid transparent;
     text-align: left;
     font-family: inherit;
     display: flex;
@@ -192,23 +187,17 @@
     gap: 0.3rem;
   }
   .area-tab:hover { background: var(--hover-bg); }
-  .area-tab[data-tab="0"].active { border-top-color: var(--accent-1); background: var(--hover-bg); }
-  .area-tab[data-tab="1"].active { border-top-color: var(--accent-2); background: var(--hover-bg); }
-  .area-tab[data-tab="2"].active { border-top-color: var(--accent-3); background: var(--hover-bg); }
+  .area-tab.active { background: var(--hover-bg); }
   .area-tab .area-num {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.7rem;
     color: var(--text-light);
     letter-spacing: 0.03em;
-    transition: color 0.2s;
   }
-  .area-tab[data-tab="0"].active .area-num { color: var(--accent-1); }
-  .area-tab[data-tab="1"].active .area-num { color: var(--accent-2); }
-  .area-tab[data-tab="2"].active .area-num { color: var(--accent-3); }
   .area-tab h3 {
     font-family: 'EB Garamond', Georgia, serif;
-    font-size: 1.05rem;
-    font-weight: 600;
+    font-size: 1.02rem;
+    font-weight: 500;
     line-height: 1.3;
     color: var(--text);
     transition: color 0.2s;
@@ -227,18 +216,15 @@
     background: var(--hover-bg);
   }
   .area-detail.active { display: block; }
-  .area-detail[data-area="0"].active { border-top-color: var(--accent-1); }
-  .area-detail[data-area="1"].active { border-top-color: var(--accent-2); }
-  .area-detail[data-area="2"].active { border-top-color: var(--accent-3); }
   .area-detail-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem 2.5rem;
   }
   .area-desc {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     color: var(--text-secondary);
-    line-height: 1.8;
+    line-height: 1.75;
   }
   .area-topics h4 {
     font-family: 'IBM Plex Mono', monospace;
@@ -252,9 +238,9 @@
     list-style: none;
   }
   .area-topics li {
-    font-size: 0.87rem;
-    color: var(--text);
-    padding: 0.28rem 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    padding: 0.25rem 0;
     padding-left: 1rem;
     position: relative;
     line-height: 1.55;
@@ -579,20 +565,20 @@
 </section>
 
 <div class="areas-wrapper">
-  <div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text); font-weight: 500; margin-bottom: 0.7rem;">Research Directions</div>
+  <div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: #999; margin-bottom: 0.7rem;">Research Directions</div>
   <div class="areas">
     <div class="areas-tabs">
-      <button class="area-tab active" data-tab="0" onclick="showArea(0)">
+      <button class="area-tab active" onclick="showArea(0)">
         <span class="area-num">01</span>
         <h3>Efficient Foundation Models</h3>
         <span class="area-hint">compression · fine-tuning · reasoning</span>
       </button>
-      <button class="area-tab" data-tab="1" onclick="showArea(1)">
+      <button class="area-tab" onclick="showArea(1)">
         <span class="area-num">02</span>
         <h3>Adaptive &amp; Continual Learning</h3>
         <span class="area-hint">lifelong · streaming · adaptation</span>
       </button>
-      <button class="area-tab" data-tab="2" onclick="showArea(2)">
+      <button class="area-tab" onclick="showArea(2)">
         <span class="area-num">03</span>
         <h3>Edge AI &amp; On-Device Intelligence</h3>
         <span class="area-hint">co-design · on-device · privacy</span>
@@ -665,10 +651,6 @@ function showArea(idx) {
   <div class="news-fade">
   <div class="news-scroll">
   <table class="news-table">
-    <tr><td class="news-date">Feb 2026</td><td><span class="news-badge paper">paper</span> Tne papers accepted to <strong>DAC 2026</strong> and <strong>CVPR 2026</strong>, respectively.</td></tr>
-    <tr><td class="news-date">Jan 2026</td><td><span class="news-badge paper">paper</span> One paper accepted to <strong>ICLR 2026</strong>.</td></tr>
-    <tr><td class="news-date">Jan 2026</td><td><span class="news-badge service">service</span> Serve as a committee member for <strong>DAC 2026</strong>.</td></tr>
-    <tr><td class="news-date">Nov 2025</td><td><span class="news-badge paper">paper</span> One paper accepted to <strong>WACV 2026</strong>.</td></tr>
     <tr><td class="news-date">Jun 2025</td><td><span class="news-badge paper">paper</span> One paper accepted to <strong>ECML-PKDD 2025</strong>.</td></tr>
     <tr><td class="news-date">Jun 2025</td><td><span class="news-badge service">service</span> Serve as a committee member for <strong>ICCAD 2025</strong>.</td></tr>
     <tr><td class="news-date">May 2025</td><td><span class="news-badge paper">paper</span> One paper accepted to <strong>ISQED 2025</strong> (Invited).</td></tr>

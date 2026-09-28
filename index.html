@@ -418,6 +418,21 @@
     font-style: italic;
     margin-bottom: 0.5rem;
   }
+  .pub-award {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    padding: 0.1rem 0.45rem;
+    margin-left: 0.25rem;
+    border: 1px solid #bbb;
+    border-radius: 2px;
+    color: var(--text);
+    background: #f8f6f0;
+    vertical-align: middle;
+  }
   .pub-links { display: flex; gap: 0.6rem; }
   .pub-links a {
     font-family: 'IBM Plex Mono', monospace;
@@ -651,6 +666,7 @@ function showArea(idx) {
   <div class="news-fade">
   <div class="news-scroll">
   <table class="news-table">
+    <tr><td class="news-date">Sep 2026</td><td><span class="news-badge paper">paper</span> One paper accepted to <strong>NeurIPS 2026</strong>.</td></tr>
     <tr><td class="news-date">Jul 2026</td><td><span class="news-badge award">award</span> Our <a href="https://aclanthology.org/2026.acl-long.1653.pdf">GISP</a> paper received the <strong>Outstanding Paper Award</strong> at <strong>ACL 2026</strong>.</td></tr>
     <tr><td class="news-date">Jul 2026</td><td><span class="news-badge award">award</span> Received the <strong>Outstanding TPC Award</strong> at <strong>DAC 2026</strong>.</td></tr>
     <tr><td class="news-date">Jul 2026</td><td><span class="news-badge paper">paper</span> Three papers accepted to <strong>ICCAD 2026</strong>.</td></tr>
@@ -686,19 +702,38 @@ function showArea(idx) {
   </div>
   <div class="pub-list">
     <div class="pub-item">
+      <div><span class="pub-tag">NeurIPS '26</span></div>
+      <div class="pub-content">
+        <h4>Dominant-Layer ZO: A Single Layer Dominates Zeroth-Order Fine-Tuning of LLMs</h4>
+        <p class="pub-authors">Wanhao Yu, Ziyan Wang, Zheng Wang, Abeer Matar Almalky, Yihang Zuo, Shuteng Niu, Sen Lin, Adnan Siraj Rakin, Deliang Fan, and <strong>Li Yang</strong></p>
+        <p class="pub-venue">NeurIPS 2026</p>
+        <div class="pub-links">
+          <a href="https://arxiv.org/pdf/2606.05516">PDF</a>
+        </div>
+      </div>
+    </div>
+    <div class="pub-item">
       <div><span class="pub-tag">ACL '26</span></div>
       <div class="pub-content">
         <h4>From Local to Global: Revisiting Structured Pruning Paradigms for Large Language Models</h4>
         <p class="pub-authors">Ziyan Wang, Enmao Diao, Qi Le, Pu Wang, Minwoo Lee, Shu-ping Yeh, Evgeny Stupachenko, Hao Feng, and <strong>Li Yang</strong></p>
-        <p class="pub-venue">ACL 2026 (Main Conference)</p>
+        <p class="pub-venue">ACL 2026 (Main Conference) <span class="pub-award">Outstanding Paper Award</span></p>
+        <div class="pub-links">
+          <a href="https://aclanthology.org/2026.acl-long.1653.pdf">PDF</a>
+          <a href="https://github.com/uncc-efficient-ai/GISP">Code</a>
+        </div>
       </div>
     </div>
     <div class="pub-item">
       <div><span class="pub-tag">DAC '26</span></div>
       <div class="pub-content">
-        <h4><a href="https://arxiv.org/pdf/2512.02185" target="_blank">Think Before You Prune: Self-Reflective Structured Pruning for Reasoning Language Models</a></h4>
-        <p class="pub-authors">Ziyan Wang, Enmao Diao, Qi Le, Ping Wang, Guanghui Wang, Minwoo Lee, Shih-Yang Yeh, and <strong>Li Yang</strong></p>
+        <h4>Think Before You Prune: Self-Reflective Structured Pruning for Reasoning Language Models</h4>
+        <p class="pub-authors">Ziyan Wang, Enmao Diao, Qi Le, Pu Wang, Guanchu Wang, Minwoo Lee, Shu-ping Yeh, and <strong>Li Yang</strong></p>
         <p class="pub-venue">DAC 2026</p>
+        <div class="pub-links">
+          <a href="https://arxiv.org/pdf/2512.02185">PDF</a>
+          <a href="https://github.com/uncc-efficient-ai/RESP">Code</a>
+        </div>
       </div>
     </div>
     <div class="pub-item">
@@ -707,14 +742,21 @@ function showArea(idx) {
         <h4>Rethinking Continual Learning with Progressive Neural Collapse</h4>
         <p class="pub-authors">Zheng Wang, Wanhao Yu, <strong>Li Yang</strong>, and Sen Lin</p>
         <p class="pub-venue">ICLR 2026</p>
+        <div class="pub-links">
+          <a href="https://openreview.net/forum?id=E3bBZ02Qcc">PDF</a>
+        </div>
       </div>
     </div>
     <div class="pub-item">
       <div><span class="pub-tag">WACV '26</span></div>
       <div class="pub-content">
         <h4>More Than Memory Savings: Zeroth-Order Optimization Mitigates Forgetting in Continual Learning</h4>
-        <p class="pub-authors">Wanhao Yu, Ziyan Wang, Shuning Niu, Sen Lin, and <strong>Li Yang</strong></p>
+        <p class="pub-authors">Wanhao Yu, Zheng Wang, Shuteng Niu, Sen Lin, and <strong>Li Yang</strong></p>
         <p class="pub-venue">WACV 2026</p>
+        <div class="pub-links">
+          <a href="https://openaccess.thecvf.com/content/WACV2026/papers/Yu_More_Than_Memory_Savings_Zeroth-Order_Optimization_Mitigates_Forgetting_in_Continual_WACV_2026_paper.pdf">PDF</a>
+          <a href="https://github.com/uncc-efficient-ai/ZOFC">Code</a>
+        </div>
       </div>
     </div>
     <div class="pub-item">
@@ -756,14 +798,6 @@ function showArea(idx) {
         <h4>LoRAFusion: A Crossbar-aware Multi-task Adaption Framework via Efficient Fusion of Pretrained LoRA Modules</h4>
         <p class="pub-authors">Jingkai Guo, Ammar Ali, <strong>Li Yang</strong>, and Deliang Fan</p>
         <p class="pub-venue">GLSVLSI 2025</p>
-      </div>
-    </div>
-    <div class="pub-item">
-      <div><span class="pub-tag">COINS '25</span></div>
-      <div class="pub-content">
-        <h4>Dyna-Optics: Architecting a Channel-Adaptive DNN Near-Sensor Optical Accelerator for Dynamic Inference</h4>
-        <p class="pub-authors">Deniz Najafi, Wanhao Yu, Mehrdad Morsali, Paolo Mercati, Mohsen Imani, Mahdi Nikdast, <strong>Li Yang</strong>, and Shaahin Angizi</p>
-        <p class="pub-venue">COINS 2025</p>
       </div>
     </div>
     <div class="pub-item">
